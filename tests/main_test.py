@@ -1,5 +1,4 @@
 import unittest
-import sys
 
 import app.example as exmpl
 
@@ -21,7 +20,7 @@ class TestStringMethods(unittest.TestCase):
           
   def test_main(self):
       self.assertFalse(exmpl.dupa_printing(12))
-      self.assertTrue(exmpl.dupa_printing("dupa"))
+      self.assertTrue(exmpl.dupa_printing("dupa1"))
 
 if __name__ == '__main__':
     unittest.main()
