@@ -25,7 +25,7 @@ repos:
         entry: ./push
     -   id: on_merge_hook
         name: on_merge_hook
-        stages:
-          - merge-commit
+        stages: [merge-commit]
         language: system
         entry: ./on_merge_script.sh
+        verbose: true
