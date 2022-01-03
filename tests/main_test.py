@@ -17,7 +17,7 @@ class TestStringMethods(unittest.TestCase):
       # Проверим, что s.split не работает, если разделитель - не строка
       with self.assertRaises(TypeError):
           s.split(2)
-          
+
   def test_main(self):
       self.assertFalse(exmpl.dupa_printing(12))
       self.assertTrue(exmpl.dupa_printing("dupa1"))
