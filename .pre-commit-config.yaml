@@ -23,3 +23,9 @@ repos:
         language: system
         args: [--user "your@ks2corp.com" --apikey "yourkey" --space "OBLT" --title "Test" --file "path_to_file.MD"]
         entry: ./push
+    -   id: on_merge_hook
+        name: on_merge_hook
+        stages:
+          - merge-commit
+        language: system
+        entry: ./on_merge_script.sh
