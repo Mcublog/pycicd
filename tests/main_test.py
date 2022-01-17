@@ -26,5 +26,9 @@ class TestStringMethods(unittest.TestCase):
       self.assertFalse(exmpl.dupa_printing(12))
       self.assertTrue(exmpl.dupa_printing("dupa1"))
 
+  def test_main_3(self):
+      self.assertFalse(exmpl.dupa_printing(12))
+      self.assertTrue(exmpl.dupa_printing("dupa1"))
+
 if __name__ == '__main__':
     unittest.main()
