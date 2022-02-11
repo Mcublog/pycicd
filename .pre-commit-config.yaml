@@ -1,31 +1,39 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
--   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.1.0
-    hooks:
-    -   id: trailing-whitespace
-    -   id: end-of-file-fixer
-    -   id: check-yaml
-    -   id: check-ast
-    -   id: no-commit-to-branch
-        args: ['--branch', 'master']
--   repo: local
-    hooks:
-    -   id: pytest
-        name: pytest
-        entry: ./tests.sh
-        language: system
-        pass_filenames: false
-        always_run: true
-    -   id: pusher
-        name: pusher
-        language: system
-        args: [--user "your@ks2corp.com" --apikey "yourkey" --space "OBLT" --title "Test" --file "path_to_file.MD"]
-        entry: ./push
-    -   id: on_merge_hook
-        name: on_merge_hook
-        stages: [merge-commit,post-merge]
-        language: system
-        entry: ./on_merge_script.sh
-        verbose: true
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v4.1.0
+      hooks:
+          - id: trailing-whitespace
+          - id: end-of-file-fixer
+          - id: check-yaml
+          - id: check-ast
+          - id: no-commit-to-branch
+            args: ["--branch", "master"]
+    - repo: https://github.com/commitizen-tools/commitizen
+      rev: v2.20.4
+      hooks:
+          - id: commitizen
+            stages: [commit-msg]
+    # - repo: local
+    #   hooks:
+    #       - id: pytest
+    #         name: pytest
+    #         entry: ./tests.sh
+    #         language: system
+    #         pass_filenames: false
+    #         always_run: true
+    #       - id: pusher
+    #         name: pusher
+    #         language: system
+    #         args:
+    #             [
+    #                 --user "your@ks2corp.com" --apikey "yourkey" --space "OBLT" --title "Test" --file "path_to_file.MD",
+    #             ]
+    #         entry: ./push
+    #       - id: on_merge_hook
+    #         name: on_merge_hook
+    #         stages: [merge-commit, post-merge]
+    #         language: system
+    #         entry: ./on_merge_script.sh
+    #         verbose: true
